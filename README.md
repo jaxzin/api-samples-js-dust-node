@@ -1,5 +1,9 @@
 # ESPN API Sample (Dust.js/Node.js)
 
+## Developing
+
+Install [foreman](http://ddollar.github.com/foreman/) to run this Procfile-based project.
+
 ## Running on Heroku
 
 Assumes your local environment is already:
