@@ -6,4 +6,14 @@
 {/lead}
 {<content}
 <h2>This is where the carousel goes.</h2>
+<table id="collections">
+    <tr>
+        <th>Delay</th>
+        <th>Allows rendering on</th>
+        <th>Actually rendered</th>
+    </tr>
+    {#collection}
+    {#renderIfReady/}
+    {/collection}
+</table>
 {/content}
