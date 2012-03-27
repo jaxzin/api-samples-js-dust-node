@@ -2,7 +2,13 @@
 
 ## Developing
 
+Install [node.js](http://nodejs.org/) to run Node.
 Install [foreman](http://ddollar.github.com/foreman/) to run this Procfile-based project.
+
+    $ git clone https://github.com/jaxzin/api-samples-js-dust-node.git
+    $ cd api-samples-js-dust-node
+    $ npm install
+    $ foreman start
 
 ## Running on Heroku
 
