@@ -27,3 +27,15 @@ app.get('/', function(req, res, next) {
     collection.fetch();
     lilac.render(req, res, collection, 'index');
 });
+
+app.get('/headlines', function(req, res, next) {
+    var collection = new Collections.DelayedCollection([
+        new Models.DelayedModel(),
+        new Models.DelayedModel({allowRendering: 'client-only'}),
+        new Models.DelayedModel({delay: 200, allowRendering: 'server-only'}),
+        new Models.DelayedModel({delay: 500}),
+        new Models.DelayedModel({delay: 1000})
+    ]);
+    collection.fetch();
+    lilac.render(req, res, collection, 'headlines');
+});
