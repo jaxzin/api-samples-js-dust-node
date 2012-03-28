@@ -10,6 +10,15 @@ Install [foreman](http://ddollar.github.com/foreman/) to run this Procfile-based
     $ npm install
     $ foreman start
 
+## Troubleshooting
+
+Use [node-inspector](https://github.com/dannycoates/node-inspector)
+
+    $ gem install node-inspector
+    ... start node with --debug switch ...
+    $ node-inspector &
+    ... open localhost:8080 ...
+
 ## Running on Heroku
 
 Assumes your local environment is already:
