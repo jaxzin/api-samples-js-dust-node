@@ -35,6 +35,13 @@ app.get('/headlines', function(req, res, next) {
     collection.model = Models.HeadlineModel;
     collection.url = 'http://api.espn.com/v1/sports/news/headlines/top?apiKey=' + process.env.espn_api_key;
 //    console.log('Fetching headlines: ' + collection.url);
-    collection.fetch();
+    collection.fetch({
+        success: function(collection, response) {
+            console.log("Success!!");
+        },
+        error: function(collection, response) {
+            console.log("Error!!"+ response.statusText);
+        }
+    });
     headlines.render(req, res, collection, 'headlines');
 });

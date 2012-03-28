@@ -1,5 +1,5 @@
 now.ready(function() {
-    now.getModelsToRender($.cookie('collection.id'), render);
+    now.getModelsToRender(0, render);
 });
 
 function render(model) {

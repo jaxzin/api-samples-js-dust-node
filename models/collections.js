@@ -4,8 +4,16 @@ if (typeof exports !== 'undefined') {
 
     _ = require('underscore')._;
     jQuery = require('jquery');
+    XMLHttpRequest = require("xmlhttprequest").XMLHttpRequest;
+    jQuery.support.cors = true;
+    jQuery.ajaxSettings.xhr = function () {
+        return new XMLHttpRequest;
+    };
     Backbone = require('backbone');
     Backbone.setDomLibrary(jQuery);
+//    Backbone.sync = function(method, model) {
+//        console.log(method + ": " + model.url);
+//    };
 }
 
 Collections.DelayedCollection = Backbone.Collection.extend({
@@ -29,18 +37,20 @@ Collections.DelayedCollection = Backbone.Collection.extend({
 
 Collections.Headlines = Backbone.Collection.extend({
     parse: function (response) {
+        console.log("Parsing headlines response.");
         return response.headlines;
     },
 
     // realistically, this fetch call would go out to some external endpoint (database, cache, service, etc)
     // for this demo, it just uses setTimeout to simulate an asynchronous request that takes some amount of time
-    fetch: function() {
-        var self = this;
-        this.each(function(model) {
-            console.log("Fetching headline:" + headline);
-            self.updateModel(model);
-        });
-    },
+//    fetch: function() {
+//        console.log("Fetching headlines:" + this.url);
+//        var self = this;
+//        this.each(function(model) {
+//            console.log("Fetching headline:" + headline);
+//            self.updateModel(model);
+//        });
+//    },
 
     updateModel: function(model) {
         // TODO: call API here
