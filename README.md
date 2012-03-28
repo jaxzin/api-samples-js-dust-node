@@ -43,3 +43,7 @@ Assumes your local environment is already:
 * [Node Package Manager (npm)](http://npmjs.org/)
 * [Dust.js](http://akdubya.github.com/dustjs/)
 * [Backbone.js](http://documentcloud.github.com/backbone/)
+
+## Credit
+
+Heavily based on [Lilac](https://github.com/brikis98/lilac/)
