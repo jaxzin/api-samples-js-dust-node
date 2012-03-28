@@ -37,7 +37,7 @@ app.get('/headlines', function(req, res, next) {
 //    console.log('Fetching headlines: ' + collection.url);
     collection.fetch({
         success: function(collection, response) {
-            console.log("Success!!");
+            console.log("Success!!" + collection.length);
         },
         error: function(collection, response) {
             console.log("Error!!"+ response.statusText);
