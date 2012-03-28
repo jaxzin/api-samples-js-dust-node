@@ -2,7 +2,6 @@ var express = require('express');
 var dust = require('dust');
 var Models = require('./models/models');
 var Collections = require('./models/collections');
-//var lilac = require('./lib/lilac');
 var headlines = require('./lib/headlines');
 require('./lib/watcher').watch(dust, './templates', './public/templates', '.jst');
 
@@ -19,15 +18,8 @@ app.get('/public/*.(js|css)', function(req, res, next) {
 });
 
 app.get('/', function(req, res, next) {
-    var collection = new Collections.DelayedCollection([
-        new Models.DelayedModel(),
-        new Models.DelayedModel({allowRendering: 'client-only'}),
-        new Models.DelayedModel({delay: 200, allowRendering: 'server-only'}),
-        new Models.DelayedModel({delay: 500}),
-        new Models.DelayedModel({delay: 1000})
-    ]);
-    collection.fetch();
-    lilac.render(req, res, collection, 'index');
+    var collection = new Collections.Headlines();
+    headlines.render(req, res, collection, 'index');
 });
 
 app.get('/headlines', function(req, res, next) {
@@ -37,7 +29,7 @@ app.get('/headlines', function(req, res, next) {
 //    console.log('Fetching headlines: ' + collection.url);
     collection.fetch({
         success: function(collection, response) {
-            console.log("Success!!" + collection.length);
+            console.log("Success!!: " + collection.length);
         },
         error: function(collection, response) {
             console.log("Error!!"+ response.statusText);

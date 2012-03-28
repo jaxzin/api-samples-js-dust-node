@@ -1,28 +1,21 @@
-<html>
-<head>
-    <title>Node streaming example</title>
-    {^noScript}
-    <script type="text/javascript" src="public/javascripts/jquery.js"></script>
-    <script type="text/javascript" src="public/javascripts/jquery.cookie.js"></script>
-    <script type="text/javascript" src="public/javascripts/dust-core.js"></script>
-    <script type="text/javascript" src="/nowjs/now.js"></script>
-    <script type="text/javascript" src="public/templates/delayedModel.js"></script>
-    <script type="text/javascript" src="public/javascripts/lilac.js"></script>
-    <noscript>
-        <meta http-equiv="refresh" content="0;url=/?noScript=true"/>
-    </noscript>
-    {/noScript}
-</head>
-<body>
-<table id="collections">
-    <tr>
-        <th>Delay</th>
-        <th>Allows rendering on</th>
-        <th>Actually rendered</th>
-    </tr>
-    {#collection}
-    {#renderIfReady/}
-    {/collection}
-</table>
-</body>
-</html>
+{>frame/}
+{<scripts}
+{/scripts}
+{<title}Welcome{/title}
+{<lead}
+<h1>Welcome</h1>
+<p class='lead'>This site contains a set of sample usages of the ESPN API.</p>
+{/lead}
+{<content}
+<hr class='soften'/>
+
+<section id='samples' class='marketing'>
+    <div class='row'>
+        <div class='span4'>
+            <h2>Headlines API</h2>
+            <p>See some example ways that you might use the ESPN Headlines API in your application.</p>
+            <a href='/headlines' class='btn btn-primary'>See sample &raquo;</a>
+        </div>
+    </div>
+</section>
+{/content}
