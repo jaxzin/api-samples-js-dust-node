@@ -22,8 +22,10 @@ Use [node-inspector](https://github.com/dannycoates/node-inspector)
 ## Running on Heroku
 
 Assumes your local environment is already:
+
 > * [Setup to deploy to Heroku](http://devcenter.heroku.com/articles/quickstart).
 > * Setup with [node](http://nodejs.org/) and [npm](http://npmjs.org/)
+
 
     $ git clone http://github.com/jaxzin/api-samples-js-dust-node.git
     $ cd api-samples-js-dust-node
