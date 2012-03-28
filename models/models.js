@@ -15,3 +15,14 @@ Models.DelayedModel = Backbone.Model.extend({
         allowRendering: 'both'			// valid options: client-only, server-only, both
     }
 });
+
+Models.HeadlineModel = Backbone.Model.extend({
+    defaults: {
+        headline: 'Sample Headline'
+//        isFetched: false,
+//        isRendered: false,
+//        template: 'delayedModel',
+//        delay: 0,
+//        allowRendering: 'both'			// valid options: client-only, server-only, both
+    }
+});

@@ -3,7 +3,9 @@ if (typeof exports !== 'undefined') {
     Collections = exports;
 
     _ = require('underscore')._;
+    jQuery = require('jquery');
     Backbone = require('backbone');
+    Backbone.setDomLibrary(jQuery);
 }
 
 Collections.DelayedCollection = Backbone.Collection.extend({
@@ -22,5 +24,26 @@ Collections.DelayedCollection = Backbone.Collection.extend({
 
     updateModel: function(model) {
         model.set({message: 'fetched after ' + this.get('delay') + ' ms', isFetched: true});
+    }
+});
+
+Collections.Headlines = Backbone.Collection.extend({
+    parse: function (response) {
+        return response.headlines;
+    },
+
+    // realistically, this fetch call would go out to some external endpoint (database, cache, service, etc)
+    // for this demo, it just uses setTimeout to simulate an asynchronous request that takes some amount of time
+    fetch: function() {
+        var self = this;
+        this.each(function(model) {
+            console.log("Fetching headline:" + headline);
+            self.updateModel(model);
+        });
+    },
+
+    updateModel: function(model) {
+        // TODO: call API here
+        model.set({headline: 'Example fetched headline', web_url: 'http://games.espn.go.com'});
     }
 });
