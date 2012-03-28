@@ -1,6 +1,7 @@
 {>frame/}
 {<scripts}
-<script type="text/javascript" src="public/templates/headlineModel.js"></script>
+<script type="text/javascript" src="public/templates/carouselItem.js"></script>
+<script type="text/javascript" src="public/templates/carousel.js"></script>
 <script type="text/javascript" src="public/javascripts/headlines.js"></script>
 {/scripts}
 {<title}Headlines{/title}
@@ -9,16 +10,5 @@
 <p class='lead'>Samples of how you could use the Headlines API for various components.</p>
 {/lead}
 {<content}
-<h2>This is where the carousel goes.</h2>
-<table id="collections">
-    <tr>
-        <th>Headline</th>
-        <th>Delay</th>
-        <th>Allows rendering on</th>
-        <th>Actually rendered</th>
-    </tr>
-    {#collection}
-    {#renderIfReady/}
-    {/collection}
-</table>
+{>carousel/}
 {/content}

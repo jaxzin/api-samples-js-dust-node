@@ -19,7 +19,7 @@ Models.DelayedModel = Backbone.Model.extend({
 Models.HeadlineModel = Backbone.Model.extend({
     defaults: {
         headline: 'Sample Headline',
-        template: 'headlineModel'
+        template: 'carouselItem'
 //        isFetched: false,
 //        isRendered: false,
 //        template: 'delayedModel',
