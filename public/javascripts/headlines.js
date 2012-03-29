@@ -8,6 +8,7 @@ function render(model) {
         if (err) {
             console.log(err);
         } else {
+            console.log("rendering: "+ out);
             $('.carousel-inner').append(out);
         }
     });
