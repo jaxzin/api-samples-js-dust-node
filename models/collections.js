@@ -38,6 +38,7 @@ Collections.DelayedCollection = Backbone.Collection.extend({
 Collections.Headlines = Backbone.Collection.extend({
     parse: function (response) {
         console.log("Parsing headlines response.");
+        response.headlines[0].active = true;
         return response.headlines;
     },
 
