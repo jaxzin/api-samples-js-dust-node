@@ -40,21 +40,5 @@ Collections.Headlines = Backbone.Collection.extend({
         console.log("Parsing headlines response.");
         response.headlines[0].active = true;
         return response.headlines;
-    },
-
-    // realistically, this fetch call would go out to some external endpoint (database, cache, service, etc)
-    // for this demo, it just uses setTimeout to simulate an asynchronous request that takes some amount of time
-//    fetch: function() {
-//        console.log("Fetching headlines:" + this.url);
-//        var self = this;
-//        this.each(function(model) {
-//            console.log("Fetching headline:" + headline);
-//            self.updateModel(model);
-//        });
-//    },
-
-    updateModel: function(model) {
-        // TODO: call API here
-        model.set({headline: 'Example fetched headline', web_url: 'http://games.espn.go.com'});
     }
 });
